@@ -1,6 +1,5 @@
 
-<!-- use the readme-cover.png here -->
-<img src="/home/cillianomurchu/projects/insurance-man/src/assets/readme-cover.png">
+![alt text](src/assets/readme-cover.png)
 
 Short excercise to create, list, edit, and delete items through restful API using Angular2+
 

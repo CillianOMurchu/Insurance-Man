@@ -29,17 +29,7 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { FavouritesModalComponent } from './modals/favourites-modal/favourites-modal.component';
 import { FilterInputComponent } from './components/common/filter-input/filter-input.component';
-// firebase app config
-const config = {
-  apiKey: 'AIzaSyBZf2I-_JyV79CpVGz_IWua5BjufJAKvMA',
-  authDomain: 'insurance-man.firebaseapp.com',
-  databaseURL: 'https://insurance-man.firebaseio.com',
-  projectId: 'insurance-man',
-  storageBucket: '',
-  messagingSenderId: '243591381888',
-  appId: '1:243591381888:web:01a65c4ff4a2fb7238b765',
-  measurementId: 'G-M3J8YZN0B5'
-};
+
 
 @NgModule({
   declarations: [

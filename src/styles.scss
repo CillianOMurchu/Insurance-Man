@@ -1,0 +1,41 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+@import 'app/styles/index.scss';
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, 'Helvetica Neue', sans-serif;
+  background: $primary !important; /* match border color */
+  text-align: center;
+}
+
+h1 {
+  margin: 0;
+}
+
+li {
+  list-style: none;
+}
+
+img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+}
+
+button {
+  padding: 2px 4px !important;
+  font-size: 1.5rem !important;
+}
+
+.cdk-overlay-pane {
+  width: unset !important;
+  max-width: unset !important;
+}

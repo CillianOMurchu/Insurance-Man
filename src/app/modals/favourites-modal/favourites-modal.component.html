@@ -1,0 +1,15 @@
+<div class="outer-container">
+    <app-logo
+      [fontSize]="2.4"
+      [word1]="'Favourites List'"
+      [word2]="''"
+    ></app-logo>
+  <mat-dialog-content>
+    <app-products-table [productsViews]="productsView"></app-products-table>
+  </mat-dialog-content>
+  <mat-dialog-actions>
+    <button mat-button (click)="onCancel()">
+      {{ isEmpty ? 'Close' : 'Cancel' }}
+    </button>
+  </mat-dialog-actions>
+</div>

@@ -1,0 +1,128 @@
+body {
+  table {
+    max-width: 100%;
+    width: 100%;
+    border-radius: $border-radius;
+
+    .cell {
+      &--select {
+        width: 5rem !important;
+      }
+      &--image {
+        width: 5rem !important;
+        padding: 0 0.5rem;
+      }
+      &--price {
+        width: 5rem !important;
+      }
+    }
+    .mat-header-row {
+      position: sticky;
+      top: 0;
+      background-color: inherit;
+      z-index: 9999;
+    }
+
+    @include respond(phone) {
+      td.mat-cell:last-of-type,
+      td.mat-footer-cell:last-of-type,
+      th.mat-header-cell:last-of-type {
+        padding-right: 0;
+      }
+
+      td.mat-cell:first-of-type,
+      td.mat-footer-cell:first-of-type,
+      th.mat-header-cell:first-of-type {
+        padding-left: 2rem;
+      }
+    }
+
+    .mat-checkbox-layout {
+      margin: 0;
+    }
+
+    .mat-header-row:first-child {
+      border-top-left-radius: $border-radius;
+      border-top-right-radius: $border-radius;
+
+      > th:first-child {
+        border-top-left-radius: $border-radius;
+      }
+      > th:last-child {
+        border-top-right-radius: $border-radius;
+      }
+    }
+
+    .mat-row:last-child {
+      border-top-left-radius: $border-radius;
+      border-top-right-radius: $border-radius;
+
+      > td:first-child {
+        border-bottom-left-radius: $border-radius;
+      }
+      > td:last-child {
+        border-bottom-right-radius: $border-radius;
+      }
+    }
+
+    .mat-row {
+      background-color: rgba(133, 20, 75, 0.089);
+      > th,
+      > td {
+        font-size: 1.4rem;
+      }
+      &:nth-child(even) {
+        background-color: rgba(133, 20, 75, 0.212);
+      }
+      &:hover {
+        background-color: $red;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+::ng-deep {
+  .container.mat-card {
+    margin: 0 auto;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    padding: 1rem 2rem;
+    margin: 1rem 0;
+  }
+
+  .mat-simple-snackbar {
+    text-align: center;
+    text-transform: uppercase;
+    display: grid !important;
+    justify-content: center !important;
+    padding: 1rem;
+  }
+
+  .red-snackbar {
+    min-width: unset;
+    border: 0.2rem solid ghostwhite;
+    background: $red !important;
+    color: ghostwhite;
+    text-align: center;
+  }
+
+  .progress-loader {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+
+    mat-progress-spinner {
+      width: 60px !important;
+      height: 60px !important;
+      svg {
+        width: 60px !important;
+        height: 60px !important;
+      }
+    }
+  }
+
+  button {
+    padding: 0.2rem 0.4rem !important;
+  }
+}

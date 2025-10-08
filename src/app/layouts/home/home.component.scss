@@ -1,0 +1,75 @@
+a {
+  font-size: 1.4rem;
+}
+
+.outer-container {
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  padding: 2rem;
+
+  .titles {
+    border-bottom: 2px solid #efe4e8;
+    width: 100%;
+    text-align: center;
+    padding: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .logins {
+    display: grid;
+    justify-items: center;
+  }
+}
+
+
+// below should all be set into seperate component
+.form-signin {
+  width: 100%;
+  max-width: 330px;
+  padding: 15px;
+  margin: auto;
+  display: grid;
+  justify-content: center;
+  .checkbox {
+    font-weight: 400;
+  }
+  .form-control {
+    position: relative;
+    box-sizing: border-box;
+    height: auto;
+    padding: 10px;
+    font-size: 16px;
+    &:focus {
+      z-index: 2;
+    }
+  }
+  input {
+    &[type='email'] {
+      margin-bottom: -1px;
+      border-bottom-right-radius: 0;
+      border-bottom-left-radius: 0;
+    }
+    &[type='password'] {
+      margin-bottom: 10px;
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
+    }
+  }
+}
+
+.fake-account {
+  opacity: 0;
+  transition: all 0.2s ease;
+  &.display {
+    opacity: 1;
+    transition: all 0.2s ease;
+  }
+}
+
+.free-creds {
+  color: white;
+  text-align: center;
+  cursor: pointer;
+  font-size: 12px;
+}

@@ -1,0 +1,138 @@
+<div class="container--filters">
+
+  <div
+    class="container--filters__desktop"
+    [ngClass]="{ favourites: productsViews === 'favourites' }"
+  >
+    <div *ngFor="let filter of filters">
+      <filter-app-input
+        [control]="filterControl"
+        [name]="filter.value"
+        (applyFilter)="applyFilter($event, filter.value)"
+      ></filter-app-input>
+    </div>
+  </div>
+  <div class="container--filters__phone">
+    <div class="dropdown">
+      <mat-form-field>
+        <mat-label>Filter By...</mat-label>
+        <mat-select
+          (selectionChange)="onFilterSelect($event)"
+          [(ngModel)]="selectedFilter"
+        >
+          <mat-option *ngFor="let filter of filters" [value]="filter.value">
+            {{ filter.viewValue }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div *ngFor="let filter of selectedFilter">
+      <filter-app-input
+        [control]="filterControl"
+        [name]="filter.value"
+        (applyFilter)="applyFilter($event, filter.value)"
+      ></filter-app-input>
+    </div>
+  </div>
+  <div class="container--buttons">
+    <button
+      *ngIf="productsViews !== 'favourites'"
+      class="btn btn-dark"
+      (click)="onSaveSelected()"
+    >
+      Save Selected
+    </button>
+    <button class="btn btn-dark" (click)="onRemoveSelected()">
+      Remove Selected
+    </button>
+    <button
+      *ngIf="productsViews !== 'favourites'"
+      class="btn btn-warning favourites"
+      (click)="onDisplayFavourites()"
+    >
+      Display Favourites
+    </button>
+  </div>
+</div>
+
+<mat-card class="container">
+  <mat-card-content fxFlex class="content" fxLayout="column">
+    <div class="mat-elevation-z8">
+      <table mat-table class="full-width-table " matSort aria-label="Elements">
+        <ng-container matColumnDef="select">
+          <th class="header " mat-header-cell *matHeaderCellDef>
+            <mat-checkbox
+              (change)="$event ? masterToggle() : null"
+              [checked]="selection.hasValue() && isAllSelected()"
+              [indeterminate]="selection.hasValue() && !isAllSelected()"
+            >
+            </mat-checkbox>
+          </th>
+          <td mat-header-cell mat-cell *matCellDef="let row">
+            <mat-checkbox
+              (click)="$event.stopPropagation()"
+              (change)="$event ? selection.toggle(row) : null"
+              [checked]="selection.isSelected(row)"
+            >
+            </mat-checkbox>
+          </td>
+        </ng-container>
+        <ng-container matColumnDef="image">
+          <th class="header " mat-header-cell *matHeaderCellDef></th>
+          <td class="cell--image" mat-cell *matCellDef="let product">
+            <img class="brand-image" [src]="retrieveImage(product)" alt="" />
+          </td>
+        </ng-container>
+        <ng-container matColumnDef="name">
+          <th class="header" mat-header-cell *matHeaderCellDef mat-sort-header>
+            Name
+          </th>
+          <td class="cell--name" mat-cell *matCellDef="let product">
+            {{ product.name }}
+          </td>
+        </ng-container>
+        <ng-container matColumnDef="brand">
+          <th class="header" mat-header-cell *matHeaderCellDef mat-sort-header>
+            Company
+          </th>
+          <td class="cell--brand" mat-cell *matCellDef="let product">
+            {{ product.brand }}
+          </td>
+        </ng-container>
+        <ng-container matColumnDef="kind">
+          <th class="header" mat-header-cell *matHeaderCellDef mat-sort-header>
+            Kind
+          </th>
+          <td class="cell--kind" mat-cell *matCellDef="let product">
+            {{ product.kind }}
+          </td>
+        </ng-container>
+        <ng-container matColumnDef="price">
+          <th class="header" mat-header-cell *matHeaderCellDef mat-sort-header>
+            Price £
+          </th>
+          <td class="cell--price" mat-cell *matCellDef="let product">
+            {{ product.price }}
+          </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+      </table>
+    </div>
+    <div
+      *ngIf="!(dataSource.loading$ | async) && (dataSource.isEmpty$ | async)"
+      class="empty"
+    >
+      <p>no results here</p>
+      <div>
+        <img [src]="imgNoData" />
+      </div>
+    </div>
+    <mat-paginator
+      [length]="dataSource.data?.length"
+      [pageSize]="5"
+      [pageSizeOptions]="[5, 10, 20, 50]"
+      showFirstLastButtons
+    ></mat-paginator> </mat-card-content
+></mat-card>

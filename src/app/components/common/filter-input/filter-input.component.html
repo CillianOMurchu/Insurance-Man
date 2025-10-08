@@ -1,0 +1,8 @@
+<mat-form-field appearance="outline" class="filter" floatLabel="never">
+  <mat-label>{{ name }}</mat-label>
+  <input
+    (keyup)="applyFilter.emit($event)"
+    matInput
+    [formControl]="control"
+  />
+</mat-form-field>

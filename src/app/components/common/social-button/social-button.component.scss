@@ -1,0 +1,10 @@
+@import '../../../styles/index';
+.social-button {
+  background: #031f40;
+  color: #fff;
+  font-weight: 300;
+
+  &:hover {
+    background: $red;
+  }
+}

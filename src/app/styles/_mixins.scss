@@ -1,0 +1,32 @@
+// MEDIA QUERY MANAGER
+/*
+0 - 568px:     iPhone 5 the format is 320 x 568 pixels.
+568 - 1024px:  iPad the format is 768 x 1024 pixels 
+900 - 1200px:  Desktop
+
+$breakpoint argument choices:
+- phone
+- tab
+- desktop
+*/
+
+@mixin respond($breakpoint) {
+  @if $breakpoint==phone {
+    @media (max-width: $breakpoint-phone) {
+      //568px
+      @content;
+    }
+  }
+  @if $breakpoint==tab {
+    @media (max-width: $breakpoint-tab) {
+      // 1024px
+      @content;
+    }
+  }
+  @if $breakpoint==desktop {
+    @media (max-width: $breakpoint-desktop) {
+      // 1200px
+      @content;
+    }
+  }
+}

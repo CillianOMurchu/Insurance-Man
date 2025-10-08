@@ -1,0 +1,94 @@
+@import '../../styles/index';
+
+:host {
+  background: white;
+  mat-card.container {
+    width: 100%;
+    border-radius: $border-radius;
+    padding: 0;
+    max-height: 100%;
+    overflow: auto;
+    max-width: 85rem;
+    margin: 0 auto;
+    @include respond(phone) {
+      max-width: 100vw;
+    }
+  }
+
+  mat-paginator {
+    border-top: 0.0625rem solid ghostwhite;
+  }
+
+  .brand-image {
+    width: 2rem;
+    height: 2rem;
+    position: unset;
+  }
+}
+
+.container {
+  &--buttons {
+    padding: 1rem 2rem;
+    justify-content: center;
+    justify-items: center;
+    display: grid;
+    grid-auto-flow: column;
+    justify-content: space-around;
+    grid-gap: 1rem;
+  }
+
+  &--filters {
+    display: grid;
+    justify-content: center;
+    justify-items: center;
+
+    .title {
+      font-size: 2rem;
+    }
+    &__desktop {
+      display: grid;
+      grid-auto-flow: column;
+      grid-gap: 1rem;
+      @include respond(tab) {
+        grid-template-columns: 1fr 1fr;
+        grid-auto-flow: unset;
+
+        &.favourites > div:nth-child(3) {
+          grid-column: 1/3;
+        }
+      }
+      @include respond(phone) {
+        display: none;
+      }
+    }
+    &__phone {
+      display: none;
+      @include respond(phone) {
+        display: unset;
+      }
+    }
+    display: grid;
+  }
+}
+
+.empty {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  text-align: center;
+  grid-gap: 1rem;
+  position: relative;
+  justify-items: center;
+  > div {
+    width: 5rem;
+    height: 5rem;
+    position: relative;
+  }
+}
+
+.btn {
+  &.favourites {
+    background: $yellow;
+  }
+}

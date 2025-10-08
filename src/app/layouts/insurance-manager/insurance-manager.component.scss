@@ -1,0 +1,12 @@
+@import '../../styles/index.scss';
+
+:host {
+  background: $white;
+  overflow: auto;
+  display: grid;
+  height: 100%;
+  position: relative;
+  .table-container {
+    margin-top: 5px;
+  }
+}

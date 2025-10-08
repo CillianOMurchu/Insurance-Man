@@ -1,0 +1,39 @@
+// media queries
+$desktop: 960px;
+$tablet: 768px;
+$mobile-large: 640px;
+$mobile: 480px;
+$mobile-small: 300px;
+
+// Shadow
+$button-shadow: 0 0 0.8rem 0 rgba(0, 0, 0, 0.23);
+$box-shadow-small: 0 0 1rem 0 rgba(0, 0, 0, 0.375);
+$box-shadow: 0 0 1.25rem 0 rgba(0, 0, 0, 0.125);
+$box-shadow-large: 0 0 3rem 0 rgba(0, 0, 0, 0.375);
+
+//Text Style
+$textStyle-light: 300;
+$textStyle-normal: 500;
+$textStyle-bold: 700;
+$default-font-size: 1.6rem;
+
+// colors
+$primary: #001f3f;
+$red: #85144b;
+$grey: #ddd;
+$green: #2ecc40;
+$blue: #0074d9;
+$white: #ffffff;
+$yellow: #FFDC00;
+// measurments
+$header-height: 5rem;
+$brand-width: 3rem;
+$brand-height: 3rem;
+
+$footer-height: 38px;
+$border-radius: 0.375rem;
+
+// breakpoints
+$breakpoint-phone: 35.5em;
+$breakpoint-tab: 64em;
+$breakpoint-desktop: 75em;

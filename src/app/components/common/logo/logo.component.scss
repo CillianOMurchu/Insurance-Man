@@ -1,0 +1,25 @@
+@import '../../../styles/index.scss';
+.logo {
+  font-family: 'Arial Narrow', sans-serif;
+  color: $grey;
+  text-transform: uppercase;
+  letter-spacing: -4px;
+
+  &--container {
+    text-align: center;
+    padding: 2rem 0;
+  }
+  .word2 {
+    transition: all 0.3s;
+    z-index: 0; 
+  }
+  .word1 {
+    color: $red;
+    display: inline-block;
+    z-index: 10;
+    transition: all 0.4s;
+  }
+  span {
+    position: relative;
+  }
+}
